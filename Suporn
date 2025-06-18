@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sitio para Adultos - Galería y Búsqueda</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="age-check">
+        <h1>Bienvenido</h1>
+        <p>Este sitio contiene contenido para adultos y está dirigido únicamente a mayores de 18 años.</p>
+        <button onclick="allowAccess(true)">Soy mayor de 18 años</button>
+        <button onclick="allowAccess(false)">No soy mayor de 18 años</button>
+    </div>
+    <div id="main-content" style="display:none;">
+        <h2>Galería de Fotos y Videos</h2>
+        <input type="text" id="search-input" placeholder="Buscar por título, etiqueta o descripción..." oninput="filtrarGaleria()">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('photos')">Fotos</button>
+            <button class="tab-btn" onclick="showTab('videos')">Videos</button>
+        </div>
+        <div id="photos" class="tab-content">
+            <div class="gallery" id="gallery-photos">
+                <!-- Las fotos se generan por JS -->
+            </div>
+        </div>
+        <div id="videos" class="tab-content" style="display:none;">
+            <div class="gallery" id="gallery-videos">
+                <!-- Los videos se generan por JS -->
+            </div>
+        </div>
+    </div>
+    <div id="no-access" style="display:none;">
+        <h2>Acceso Denegado</h2>
+        <p>No puedes acceder a este sitio si eres menor de 18 años.</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
